@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework_simplejwt',
     'rest',
+    'orders'
 ]
 AUTH_USER_MODEL = 'rest.User'
 REST_FRAMEWORK = {
