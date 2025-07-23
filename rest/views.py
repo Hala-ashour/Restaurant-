@@ -29,11 +29,11 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    # permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['category', 'price']
     
-    @action(detail=True, methods=['GET'], url_path='check-availability')
+    @action(detail=True, methods=['GET'], url_path='available')
     def check_availability(self, request, pk=None):
         
         product = self.get_object()
